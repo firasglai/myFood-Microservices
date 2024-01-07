@@ -1,0 +1,7 @@
+
+spring:
+  application:
+    name: restaurants
+  config:
+    import: optional:configserver:http://localhost:8888
+
