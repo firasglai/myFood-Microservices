@@ -1,7 +1,7 @@
 
 spring:
   application:
-    name: restaurants
+    name: restaurant
   config:
     import: optional:configserver:http://localhost:8888
 

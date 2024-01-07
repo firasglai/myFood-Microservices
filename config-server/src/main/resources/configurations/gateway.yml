@@ -4,29 +4,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-      routes:
-        - id: order-service
-          uri: http://localhost:8090
-          predicates:
-            - Path=/api/orders/**
-        - id: kitchen-service
-          uri: http://localhost:8091
-          predicates:
-            - Path=api/kitchen/**
-        - id: courtier-service
-          uri: http://localhost:8092
-          predicates:
-            - Path=api/courtier/**
-        - id: restaurant-service
-          uri: http://localhost:8093
-          predicates:
-            - Path=api/restaurants/**
-
 management:
   tracing:
     sampling:

@@ -1,8 +1,6 @@
 package com.firas.kitchen.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -19,7 +17,7 @@ public class LineItems {
     //Restaurant Related
     private Integer idMenu;
     //ticket related
-    private Integer idTicket;
-
-
+    @ManyToOne
+    @JoinColumn(name = "id_ticket")
+    private Ticket ticket;
 }

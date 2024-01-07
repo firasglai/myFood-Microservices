@@ -8,7 +8,7 @@ server:
   port: 8093
 spring:
   application:
-    name: restaurants
+    name: restaurant
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/dbRestaurants?createDatabaseIfNotExist=true

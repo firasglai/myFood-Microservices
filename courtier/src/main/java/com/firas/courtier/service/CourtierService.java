@@ -29,10 +29,8 @@ public class CourtierService {
     }
 
 
-    public void updateCourtier(Courtier updatedCourtier) {
-        Integer id = updatedCourtier.getId();
+    public void updateCourtier( Integer id ,Courtier updatedCourtier) {
         Optional<Courtier> existingCourtier = courtierRepository.findById(id);
-
         if (existingCourtier.isPresent()) {
             Courtier courtierToUpdate = existingCourtier.get();
             // Update fields as needed

@@ -3,3 +3,23 @@ spring:
     name: gateway
   config:
     import: optional:configserver:http://localhost:8888
+  cloud:
+    gateway:
+      routes:
+        - id: order
+          uri: lb://order
+          predicates:
+            - Path=/api/order/**
+        - id: kitchen
+          uri: http://localhost:8091
+          predicates:
+            - Path=/api/kitchen/**
+        - id: courtier
+          uri: http://localhost:8092
+          predicates:
+            - Path=/api/courtier/**
+        - id: restaurant
+          uri: http://localhost:8093
+          predicates:
+            - Path=/api/restaurants/**
+

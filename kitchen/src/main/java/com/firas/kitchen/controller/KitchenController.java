@@ -38,8 +38,6 @@ public class KitchenController {
         return ResponseEntity.ok().build();
     }
 
-
-
     @GetMapping("/tickets/{ticketId}")
     public ResponseEntity<Ticket> getTicketById(@PathVariable Integer ticketId) {
         Ticket ticket = ticketService.getTicketById(ticketId);

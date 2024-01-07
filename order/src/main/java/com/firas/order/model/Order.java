@@ -1,5 +1,6 @@
 package com.firas.order.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.firas.order.enums.State;
 import jakarta.persistence.*;
 import lombok.*;
@@ -23,5 +24,6 @@ public class Order {
     private Integer restaurantId;
 
     @OneToOne(mappedBy = "idOrder", cascade = CascadeType.ALL)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private DeliveryInfo deliveryInfo;
 }

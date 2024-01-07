@@ -18,7 +18,7 @@ public class TicketService {
 
     public Ticket createTicket(Ticket ticket) {
         // Set Ticket State to created by default
-        ticket.setState(State.CREATED);
+        ticket.setState(State.created);
         return ticketRepository.save(ticket);
 
     }
@@ -26,14 +26,14 @@ public class TicketService {
     public void acceptTicket(Integer ticketId) {
         Ticket ticket = getTicketById(ticketId);
         // Update Ticket State to Accepted
-        ticket.setState(State.ACCEPTED);
+        ticket.setState(State.accepted);
         ticketRepository.save(ticket);
     }
 
     public void readyForPickUp(Integer ticketId) {
         Ticket ticket = getTicketById(ticketId);
         // Update Ticket State to Ready
-        ticket.setState(State.READY);
+        ticket.setState(State.ready);
         ticketRepository.save(ticket);
         restaurantClient.notifyDeliveryTime(Long.valueOf(ticketId), 30);
     }
