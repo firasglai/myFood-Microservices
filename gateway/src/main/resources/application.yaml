@@ -7,9 +7,9 @@ spring:
     gateway:
       routes:
         - id: order
-          uri: lb://order
+          uri: http://localhost:8090
           predicates:
-            - Path=/api/order/**
+            - Path=/api/orders/**
         - id: kitchen
           uri: http://localhost:8091
           predicates:
